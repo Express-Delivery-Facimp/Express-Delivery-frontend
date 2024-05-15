@@ -1,0 +1,21 @@
+
+[
+  {
+    "icon": "/assets/icons/mapHomeIcon.svg",
+    "title": "Entrega Rápida",
+    "text": "Entrega com rapidez e eficiência seus pedidos para satisfação do seu cliente."
+  },
+  {
+    "title": "Gestão",
+    "text": "Você não precisa de ponto de venda nem de computador. Na ExpressDelivery é possível gerenciar seu negócio de qualquer lugar pelo celular."
+  },
+  {
+    "title": "Consultoria",
+    "text": "Acesso a consultoria gratuita com especialistas em performance para ajudar a crescer seu negócio em 30 dias."
+  },
+  {
+    "icon": "/assets/icons/cardIcon2.svg",
+    "title": "Conta digital e crédito",
+    "text": "Serviço bancário para recebimento semanal dos repasses e que também oferece crédito com taxas facilitadas."
+  }
+]
