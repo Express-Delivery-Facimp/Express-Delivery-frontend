@@ -5,7 +5,6 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
-import { useState } from 'react';
 
 const userEnterSchema = z.object({
 	email: z.string().email('Digite um email válido'),
@@ -33,10 +32,12 @@ export default function LoginForm() {
 
 		if (password) {
 			// enviar para o app
+			return
 		}
 
 		// retorna para o login
 	}
+
 	return (
 		<form
 			onSubmit={handleSubmit(handleUserEnter)}
