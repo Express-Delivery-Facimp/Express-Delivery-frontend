@@ -4,7 +4,7 @@ interface RegisterInputProps{
   placeholder: string;
   label: string;
   type: string;
-  register: UseFormRegisterReturn;
+  register?: UseFormRegisterReturn;
   errorMessage?: string | null;
 }
 

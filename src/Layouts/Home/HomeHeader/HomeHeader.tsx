@@ -50,7 +50,7 @@ export const HomeHeader = () => {
               </li>
               <li className="text-black font-normal text-xl flex gap-2">
                 <span>Ajuda</span>
-                <img src={navArrow} alt="" className={`w-4 h-auto transform`} />
+                <img src={navArrow} alt="" />
               </li>
             </ul>
           </nav>
@@ -70,7 +70,10 @@ export const HomeHeader = () => {
             </span>
           </li>
           <li className="relative">
-            <span>Ajuda</span>
+            <span className="flex items-center">
+              <span>Ajuda</span>
+              <img src={navArrow} alt="" />
+            </span>
           </li>
         </ul>
       </nav>

@@ -4,10 +4,11 @@ import sectionimage from "../../../assets/images/loginBackground.svg";
 import logo from "../../../assets/logos/logo-home.svg";
 import girl from "../../../assets/images/loginGirl.svg";
 import LoginForm from "./Form/LoginForm";
+
 export const Login = () => {
   return (
-    <main>
-      <Link to="/">
+    <main data-testid="login-page">
+      <Link to="/" data-testid="go-back-link">
         <img src={back} alt="go back" className="h-8 w-3 mt-5 ml-5" />
       </Link>
       <div className=" flex gap-2">
@@ -34,7 +35,7 @@ export const Login = () => {
           <div className=" bg-[#FE3C3E] h-[530px] w-[24em] z-0 mt-[111px] rounded-[10px] pl-7 pt-14 flex items-start flex-col gap-5">
             <h2 className=" text-xl font-medium text-white">Faça seu login</h2>
             <p className=" text-sm font-normal text-white">Nosso delivery está pronto pra melhor te atender</p>
-            <LoginForm/>
+            <LoginForm data-testid="login-form" />
           </div>
         </section>
       </div>

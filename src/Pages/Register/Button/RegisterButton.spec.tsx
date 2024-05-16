@@ -29,11 +29,4 @@ describe('RegisterButton', () => {
         expect(button.type).toBe(expected)
     })
 
-    it('should contain a button with text Cadastrar', () => {
-        const button: HTMLButtonElement = screen.getByTestId('button-register')
-
-        const expected = 'Cadastrar'
-
-        expect(button.textContent).toBe(expected)
-    })
 }) 

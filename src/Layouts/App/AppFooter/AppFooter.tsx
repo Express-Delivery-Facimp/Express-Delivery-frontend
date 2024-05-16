@@ -7,7 +7,7 @@ import request from '../../../../assets/icons/requestsIcon.svg';
 export default function AppFooter() {
   return (
     <footer className="h-32 w-full bg-gradient-to-r from-[#DD2F2F] to-[#941313] flex flex-col justify-center">
-      <ul className="flex justify-around items-center gap-10 md:gap-72">
+      <ul className="flex justify-around items-center ">
         <NavCard image={home} name="Início" />
         <NavCard image={search} name="Buscar" />
         <NavCard image={request} name="Pedidos" />
