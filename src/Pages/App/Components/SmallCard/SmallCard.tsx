@@ -11,7 +11,7 @@ export default function SmallCard({ title, image, to }: SmallCardProps) {
     <Link to={to}>
       <div className="flex flex-col items-center gap-2 p-4 sm:p-2 md:p-4">
         <img
-          className="w-20 h-20 md:w-24 md:h-24"
+          className="w-30 h-30"
           src={image}
           alt={title}
         />

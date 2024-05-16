@@ -6,8 +6,8 @@ interface SearchFieldProps{
 
 export default function SearchField( {placeholder}:SearchFieldProps ){
   return (
-    <label htmlFor="searchInput">
-      <div className="flex items-center gap-3 bg-none border-2 border-[#CDCCCC] rounded-[10px] pl-4 cursor-text bg-[#FFFBFB]">
+    <label htmlFor="searchInput" className=" w-full">
+      <div className="flex items-center w-full gap-3 bg-none border-2 border-[#CDCCCC] rounded-[10px] pl-4 cursor-text bg-[#FFFBFB]">
         <img className="h-6 w-6" src={magnifying} alt="magnifying-glass" />
         <input
           id="searchInput"

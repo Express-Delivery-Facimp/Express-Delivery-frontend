@@ -1,12 +1,31 @@
 {
-	"user": [
-		{
-			"email": "hiago@mail.com",
-			"password": "hiago"
-		},
-		{
-			"email": "rodrigo@mail.com",
-			"password": "rodrigo"
-		}
-	]
+  "users": [
+    {
+      "id": "961f",
+      "name": "hiago s borgaco",
+      "cpf": "61899397311",
+      "email": "teste@gmail.com",
+      "phone": "99981782300",
+      "adress": "rua claudino gaudino de souza, Q31, L14, Vila Bom Jardim",
+      "password": "Coxinha123!"
+    },
+    {
+      "id": "b31a",
+      "name": "rodrigo vei bom",
+      "cpf": "11111111111",
+      "email": "rodrigoveibom@gmail.com",
+      "phone": "99981700897",
+      "adress": "rua gaudino de souza, Q33, L19, Vila Jardim",
+      "password": "Coxinha123!"
+    },
+    {
+      "id": "bf82",
+      "name": "hiago silva",
+      "cpf": "61899397310",
+      "email": "tes6tte@gmail.com",
+      "phone": "99981782305",
+      "adress": "rua claudino gaudino de souza, Q31, L14, Vila Bom Jardim",
+      "password": "Coxinha123!"
+    }
+  ]
 }

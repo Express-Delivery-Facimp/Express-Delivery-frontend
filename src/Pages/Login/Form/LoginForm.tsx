@@ -4,11 +4,12 @@ import password from '../../../../assets/icons/passwordRegister.svg';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 const userEnterSchema = z.object({
 	email: z.string().email('Digite um email válido'),
-	senha: z.string(),
+	password: z.string(),
 });
 type UserEnterSchema = z.infer<typeof userEnterSchema>;
 
@@ -21,21 +22,15 @@ export default function LoginForm() {
 		resolver: zodResolver(userEnterSchema),
 	});
 
-	async function handleUserEnter(data: UserEnterSchema) {
-		console.log(data);
-
-		const users = await axios.get('http://localhost:3000/user');
-
-		const password = users.data.find(
-			(item: any) => item.password === data.senha
-		);
-
-		if (password) {
-			// enviar para o app
-			return
-		}
-
-		// retorna para o login
+	const navigate = useNavigate();
+	
+	function handleUserEnter(data: UserEnterSchema) {
+		console.log(data)
+		toast.success('Usuário logado com sucesso!')
+		setTimeout(() => {
+		navigate('/app');
+	}, 2000);
+		
 	}
 
 	return (
@@ -43,6 +38,7 @@ export default function LoginForm() {
 			onSubmit={handleSubmit(handleUserEnter)}
 			className='flex flex-col gap-6 w-[90%]'
 		>
+			<Toaster/>
 			<LoginInput
 				register={register('email')}
 				type='email'
@@ -52,12 +48,12 @@ export default function LoginForm() {
 				errorMessage={errors.email?.message}
 			/>
 			<LoginInput
-				register={register('senha')}
+				register={register('password')}
 				type='password'
-				label='Senha'
+				label='senha'
 				placeholder='Digite sua senha'
 				image={password}
-				errorMessage={errors.senha?.message}
+				errorMessage={errors.password?.message}
 			/>
 			<button
 				type='submit'

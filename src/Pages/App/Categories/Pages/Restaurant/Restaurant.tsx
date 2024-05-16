@@ -5,7 +5,7 @@ export default function Restaurant() {
   return (
     <div className="flex flex-col gap-10 w-full h-full pl-2 pr-2 md:mx-5 py-10 bg-white">
       <ItemCard image={restaurant} cupom cupomPrice={5} partner="Forneria" category="Restaurante" shipping='grátis' stars={4.2} distance="2.1" ETA="45"/>
-      <ItemCard image={restaurant} cupom cupomPrice={5} partner="Forneria" category="Restaurante" shipping='grátis' stars={4.4} distance="2.1" ETA="45"/>
+      <ItemCard image={restaurant} cupom cupomPrice={5} partner="Churrascaria Souza" category="Restaurante" shipping='grátis' stars={4.4} distance="2.1" ETA="45"/>
       <ItemCard image={restaurant} cupom cupomPrice={5} partner="Forneria" category="Restaurante" shipping='grátis' stars={4.1} distance="2.1" ETA="45"/>
       <ItemCard image={restaurant} cupom cupomPrice={5} partner="Forneria" category="Restaurante" shipping='grátis' stars={3.2} distance="2.1" ETA="45"/>
       <ItemCard image={restaurant} cupom cupomPrice={5} partner="Forneria" category="Restaurante" shipping='grátis' stars={4.0} distance="2.1" ETA="45"/>

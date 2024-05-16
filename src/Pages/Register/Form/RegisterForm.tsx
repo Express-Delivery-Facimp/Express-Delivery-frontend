@@ -4,7 +4,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import RegisterInput from '../Input/RegisterInput';
 import RegisterButton from '../Button/RegisterButton';
 import CheckBox from '../CheckBox/CheckBox';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 // Definindo o schema de validação do Zod
 const newUserSchema = z
@@ -19,7 +20,7 @@ const newUserSchema = z
 			.string()
 			.regex(/^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$/, 'Digite um CPF válido!'),
 		phone: z.string().min(11, 'Digite um telefone válido'),
-		adress: z.string().min(2, 'Digite um endereço válido'),
+		address: z.string().min(2, 'Digite um endereço válido'),
 		email: z.string().email('Digite um email válido'),
 		password: z
 			.string()
@@ -38,7 +39,8 @@ const newUserSchema = z
 		message: 'As senhas devem coincidir',
 	});
 
-type NewUserSchema = z.infer<typeof newUserSchema>;
+	type NewUserSchema = z.infer<typeof newUserSchema>;
+
 
 export default function RegisterForm() {
 	const {
@@ -49,24 +51,18 @@ export default function RegisterForm() {
 		resolver: zodResolver(newUserSchema),
 	});
 
-	const handleNewUser = async (data: NewUserSchema) => {
-		try {
-			const bodyPost = {
-				name: data.name,
-				cpf: data.cpf,
-				email: data.email,
-				phone: data.phone,
-				adress: data.adress,
-				password: data.password,
-			};
-			await axios.post('http://localhost:3000/user', bodyPost);
-		} catch (error) {
-			console.error('Erro no envio:', error);
-		}
-	};
+	const navigate = useNavigate();
+	function handleNewUser(data: NewUserSchema){
+		console.log(data)
+		toast.success('Cadastro concluído!')
+		setTimeout(() => {
+			navigate('/Login');
+	}, 2000);
+	}
 
 	return (
 		<form onSubmit={handleSubmit(handleNewUser)}>
+			<Toaster />
 			<div className=' flex flex-col gap-2'>
 				{/* Input de name */}
 				<RegisterInput
@@ -87,8 +83,8 @@ export default function RegisterForm() {
 				{/* Input de adress */}
 				<RegisterInput
 					label='Endereço'
-					register={register('adress')}
-					errorMessage={errors.adress?.message}
+					register={register('address')}
+					errorMessage={errors.address?.message}
 					type='text'
 					placeholder='Digite seu endereço'
 				/>
