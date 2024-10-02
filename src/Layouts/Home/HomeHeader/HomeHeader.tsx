@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "../../../Components/Button/Button";
-import miniLogo from "../../../../assets/icons/favicon.svg";
-import navArrow from "../../../../assets/icons/navArrow.svg";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '../../../Components/Button/Button';
+import miniLogo from '../../../../assets/icons/favicon.svg';
+import navArrow from '../../../../assets/icons/navArrow.svg';
 
 export const HomeHeader = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -15,7 +15,7 @@ export const HomeHeader = () => {
   };
 
   return (
-    <header className="relative flex w-screen justify-between gap-10 mt-6 items-center">
+    <header className="relative flex w-full justify-between gap-10 mt-6 items-center">
       {/* Navegação de hambúrguer em telas pequenas */}
       <div className="ml-6 md:hidden">
         <button className="block" onClick={toggleMenu}>
@@ -54,11 +54,23 @@ export const HomeHeader = () => {
               </li>
             </ul>
           </nav>
+          <div className="flex gap-6 flex-col p-4">
+            <div>
+              <Link to="/login">
+                <Button variant="whiteNred">Entrar</Button>
+              </Link>
+            </div>
+            <div>
+              <Link to="/register">
+                <Button variant="redNwhite">Cadastrar</Button>
+              </Link>
+            </div>
+          </div>
         </div>
       )}
 
       {/* Navegação principal em telas médias e grandes */}
-      <nav className="hidden md:flex gap-28 ml-80">
+      <nav className="hidden md:flex gap-28 md:ml-10 lg:ml-40">
         <ul className="flex gap-28">
           <li>
             <Link to="/register-partner">Cadastrar loja</Link>
@@ -79,7 +91,7 @@ export const HomeHeader = () => {
       </nav>
 
       {/* Botões de login/cadastro */}
-      <div className="flex gap-6 mr-32">
+      <div className="md:flex gap-6 xl:mr-32 mr-12 hidden">
         <div>
           <Link to="/login">
             <Button variant="whiteNred">Entrar</Button>
